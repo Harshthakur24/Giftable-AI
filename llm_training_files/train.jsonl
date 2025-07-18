@@ -1,0 +1,1094 @@
+﻿{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "I need a gift for my father-in-law for Diwali"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"premium dry fruits gift box diwali\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "For Diwali, a premium dry fruits gift box would be perfect! It's both traditional and thoughtful. Does your father-in-law prefer specific nuts or dry fruits? ðŸ˜Š",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "He likes cashews and almonds"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"premium cashew almond gift box diwali\", \"maxPrice\": 2000}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some beautiful gift boxes with premium cashews and almonds! They come in elegant packaging perfect for Diwali. Some even include silver-plated bowls or decorative diyas.\n\nWhat's your budget range for this gift?",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "Around â‚¹1500"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"dry fruit gift box with diya set\", \"maxPrice\": 1500}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Perfect! I found a lovely gift set within your budget that includes premium cashews, almonds, and a beautiful brass diya set. It comes in festive packaging too!\n\nWould you like me to also suggest some traditional Diwali sweets to go with it?",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for â‚¹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
+
+}
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "I need a Rakhi gift for my sister"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"designer rakhi with sweets gift hamper\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Raksha Bandhan is such a special occasion! I can help you find a beautiful Rakhi gift hamper. Does your sister prefer traditional or modern Rakhi designs? ðŸ˜Š",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "She likes modern designs"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"premium bracelet style rakhi with chocolate box\", \"maxPrice\": 1000}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some gorgeous bracelet-style Rakhis that come with premium chocolate gift boxes! Some even have crystal embellishments and come in rose gold finishes.\n\nWould you like me to also look for some traditional Indian sweets to include in the hamper?",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for â‚¹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Looking for a house warming gift for my friend's new home"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"brass ganesh lakshmi idol set for home\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "For Griha Pravesh (house warming), traditional items like Ganesh-Lakshmi idols are considered very auspicious! Would you prefer a traditional brass set or something more contemporary like a gold-plated one? ðŸ âœ¨",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "Something contemporary would be nice"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"modern gold plated ganesh lakshmi idol with led\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some beautiful gold-plated Ganesh-Lakshmi sets with modern LED backlight effects! They look stunning in the evening. Some even come with decorative wooden bases.\n\nShould I also look for some matching items like a crystal Tulsi plant or a decorative pooja thali?",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for â‚¹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
+
+}
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Need a Karwa Chauth gift for my wife"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"karwa chauth thali set with gifts\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Karwa Chauth is such a special occasion! A beautiful thali set would be perfect. Would you like a traditional one with all the essentials, or maybe something more modern with some added gifts like jewelry? ðŸ’",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "Something with jewelry would be nice"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"karwa chauth thali set with mangalsutra gift set\", \"maxPrice\": 3000}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some lovely Karwa Chauth special sets that include a decorated thali with all the pooja items, plus a beautiful mangalsutra or pendant set! Some even come with matching bangles and bindis.\n\nWould you like me to also look for some designer saree or suit options to complete the gift?",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for â‚¹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Need gift suggestions for Durga Puja"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"durga puja gift hamper bengali sweets\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Durga Puja is a time of joy and celebration! Are you looking for gifts to give during Anjali or for Bijoya Dashami? I can suggest some traditional Bengali sweets hampers or maybe something more lasting like a beautiful Durga idol? ðŸ™",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "For Bijoya Dashami"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"bengali mishti gift box bijoya\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Perfect! I found some wonderful Bengali sweets gift boxes perfect for Bijoya! They include traditional favorites like sandesh, rosogolla, and chamcham. Some boxes even come with special Bijoya greeting cards.\n\nWould you like me to also look for some traditional Bengali silk sarees or kurtas to go with the sweets?",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for â‚¹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Looking for Ganesh Chaturthi gifts for family"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"ganesh chaturthi puja thali gift set\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Ganesh Chaturthi is a beautiful festival of devotion! Would you like a complete puja thali set with all the essentials like modak mold, incense holder, and diya? Or perhaps an eco-friendly Ganesha idol with decorative items? ðŸ™",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "A complete puja set would be nice"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"ganesh chaturthi complete puja set with modak making kit\", \"maxPrice\": 2000}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some beautiful complete Ganesh Chaturthi puja sets! They include a decorated thali, modak making kit, incense holder, diya, and all the essential items for the puja. Some even come with a recipe book for making different types of modak.\n\nWould you like me to also look for some traditional dry fruits and sweets to offer as prasad?",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for â‚¹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Need a Bhai Dooj gift for my brother"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"bhai dooj gift set for brother\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Bhai Dooj is such a special celebration of the brother-sister bond! Would you like to gift him something traditional like a pooja thali with sweets, or maybe something modern like a personalized gift set? ðŸª”",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "Something modern would be nice"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"personalized gift hamper for brother\", \"maxPrice\": 2500}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some amazing personalized gift hampers for your brother! They include customized photo frames, grooming kits, and premium accessories. Some sets even come with a special Bhai Dooj card and traditional Indian sweets.\n\nDoes your brother have any particular interests or hobbies I should consider while suggesting more options?",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for â‚¹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
+
+}
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Need gift suggestions for an Indian wedding"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"traditional indian wedding gift set\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Indian weddings are such grand celebrations! Are you looking for a gift for the bride, groom, or the couple together? I can suggest traditional items like silver gift sets, or modern options like premium home appliances. ðŸ‘°ðŸ¤µ",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "For the couple"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"silver plated lakshmi ganesh with gift box wedding\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some beautiful silver-plated Lakshmi Ganesh sets that make perfect wedding gifts! They come in elegant gift boxes and are considered very auspicious for newlyweds. Some sets also include matching diyas and a silver coin.\n\nWhat's your budget range? That will help me suggest more options like premium dinner sets or home decor items.",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for â‚¹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Need gift suggestions for a baby naming ceremony"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"silver baby gift set namkaran\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Namkaran is such a special occasion! Would you like to gift something traditional like a silver gift set with items like a bowl, spoon, and rattle, or maybe something practical like baby care essentials? ðŸ‘¶",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "A silver gift set would be nice"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"silver plated baby feeding set with rattle\", \"maxPrice\": 3000}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some beautiful silver-plated baby gift sets! They include feeding bowls, spoons, rattles, and some even come with a silver coin for blessings. The sets are packaged in elegant gift boxes perfect for the ceremony.\n\nWould you like me to also look for some traditional Indian baby clothes to go with the silver set?",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for â‚¹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Looking for Navratri gifts for my daughter"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"navratri chaniya choli for girls\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Navratri is such a colorful and joyful festival! Is your daughter planning to participate in Garba or Dandiya? I can suggest beautiful traditional chaniya cholis or maybe some elegant jewelry to complete her festive look! ðŸ’ƒ",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "Yes, she loves Garba dancing"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"mirror work chaniya choli with dandiya sticks\", \"maxPrice\": 2500}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Perfect! I found some stunning mirror work chaniya cholis that are perfect for Garba! They come in vibrant colors with beautiful embroidery. Some sets even include matching dandiya sticks and traditional jewelry.\n\nWhat's her age? That will help me suggest the right size and style - maybe something with lightweight fabric that's comfortable for dancing?",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for â‚¹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Need Pongal festival gift ideas"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"pongal festival gift hamper traditional\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Pongal is such a beautiful harvest festival! Are you looking for traditional gifts like a brass Pongal pot set, or maybe something modern like a gift hamper with sweets and dry fruits? ðŸŒ¾",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "Traditional brass items would be perfect"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"brass pongal pot with coconut kalash set\", \"maxPrice\": 2000}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some beautiful traditional brass Pongal pot sets! They include decorated kalash, brass diyas, and some even come with traditional kolam stencils. Perfect for celebrating the harvest festival in traditional style.\n\nWould you like me to also look for some complementary items like traditional South Indian sweets or silk sarees?",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for â‚¹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Looking for Onam festival gifts"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"onam festival gift kasavu saree\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Onam brings such joy and prosperity! Would you like traditional Kerala gifts like a beautiful Kasavu saree, or maybe something for the home like brass lamps and banana leaf serving sets? ðŸŒ¿",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "Traditional Kerala items would be great"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"kerala traditional brass lamp with coconut shell\", \"maxPrice\": 1500}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some authentic Kerala traditional items! Beautiful brass lamps (Nilavilakku), coconut shell crafts, and traditional serving sets. Some packages even include Onam special spice mixes and banana chips.\n\nAre you shopping for family members or looking to gift someone special during the Onam celebrations?",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for â‚¹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Looking for Eid gifts for family"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"eid mubarak gift hamper dates sweets\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Eid Mubarak! This is such a blessed occasion for giving and sharing. Would you like traditional gift hampers with dates and sweets, or maybe elegant Islamic home decor items? â˜ªï¸",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "Gift hampers would be perfect"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"premium dates and baklava gift box eid\", \"maxPrice\": 2000}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some beautiful Eid gift hampers! They include premium Medjool dates, traditional sweets like baklava, and some even come with elegant packaging and Eid greeting cards. Perfect for sharing the joy of the festival.\n\nHow many family members are you planning to gift? That will help me suggest the right sized hampers.",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for â‚¹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Need anniversary gift ideas for my wife"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"anniversary gift for wife jewelry gold\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Anniversary celebrations are so special! Would you like something traditional like gold jewelry, or maybe something more personal like a customized photo frame or spa gift set? ðŸ’•",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "Something traditional like gold jewelry"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"gold necklace set with earrings anniversary\", \"maxPrice\": 15000}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some beautiful gold jewelry sets perfect for anniversaries! There are elegant necklace and earring sets, some with traditional Indian designs and others with modern styles. Many come in beautiful gift boxes too.\n\nWhich anniversary are you celebrating? That might help me suggest something more specific - like something special for a milestone year!",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for â‚¹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Looking for Christmas gifts for kids"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"christmas gifts toys kids india\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Christmas is such a magical time for children! Are you looking for educational toys, fun games, or maybe something special like books or art supplies? ðŸŽ„",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "Educational toys would be great"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"educational toys stem learning kids christmas\", \"maxPrice\": 3000}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some wonderful educational toys perfect for Christmas! There are STEM learning kits, building blocks, science experiment sets, and interactive learning games. Many come in beautiful Christmas packaging too.\n\nWhat's the age range of the kids you're shopping for? That will help me suggest age-appropriate educational toys.",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for â‚¹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Need birthday gift ideas for my best friend"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"birthday gift for best friend personalized\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Birthday gifts for best friends are so special! Would you like something personalized like a custom photo frame or jewelry, or maybe something fun like a hobby-related gift? ðŸŽ‚",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "Something personalized would be perfect"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"personalized photo frame with custom message friendship\", \"maxPrice\": 2000}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some beautiful personalized options! There are custom photo frames where you can add your favorite memories together, personalized jewelry with engravings, and even custom mugs with special messages. Some come with beautiful gift wrapping too.\n\nWhat's your friend's favorite hobby or interest? That might help me suggest something even more meaningful!",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for â‚¹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "I'm looking for a gift for my sister's wedding."
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"traditional wedding gift set\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "For an Indian wedding, traditional gifts are always special! Let me help you find something meaningful. Would this be for the wedding ceremony or for a pre-wedding function like mehendi or sangeet?",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "For the wedding day"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"silver puja thali set wedding gift\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "How about a beautiful silver puja thali set? It's a traditional and auspicious gift that your sister can use for years to come. These sets usually include a decorated thali, small bowls for kumkum and rice, a bell, and sometimes even a silver diya.\n\nWhat's your budget range? That will help me suggest the perfect set.",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for â‚¹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+} 

@@ -1,0 +1,63 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Looking for Eid gifts for family"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"eid mubarak gift hamper dates sweets\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Eid Mubarak! This is such a blessed occasion for giving and sharing. Would you like traditional gift hampers with dates and sweets, or maybe elegant Islamic home decor items? ☪️",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "Gift hampers would be perfect"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"premium dates and baklava gift box eid\", \"maxPrice\": 2000}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some beautiful Eid gift hampers! They include premium Medjool dates, traditional sweets like baklava, and some even come with elegant packaging and Eid greeting cards. Perfect for sharing the joy of the festival.\n\nHow many family members are you planning to gift? That will help me suggest the right sized hampers.",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for ₹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}

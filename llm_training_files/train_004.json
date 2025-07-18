@@ -1,0 +1,65 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Looking for a house warming gift for my friend's new home"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"brass ganesh lakshmi idol set for home\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "For Griha Pravesh (house warming), traditional items like Ganesh-Lakshmi idols are considered very auspicious! Would you prefer a traditional brass set or something more contemporary like a gold-plated one? 🏠✨",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "Something contemporary would be nice"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"modern gold plated ganesh lakshmi idol with led\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some beautiful gold-plated Ganesh-Lakshmi sets with modern LED backlight effects! They look stunning in the evening. Some even come with decorative wooden bases.\n\nShould I also look for some matching items like a crystal Tulsi plant or a decorative pooja thali?",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for ₹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
+
+}

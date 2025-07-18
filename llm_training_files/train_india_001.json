@@ -1,0 +1,63 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "I'm looking for a gift for my sister's wedding."
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"traditional wedding gift set\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "For an Indian wedding, traditional gifts are always special! Let me help you find something meaningful. Would this be for the wedding ceremony or for a pre-wedding function like mehendi or sangeet?",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "For the wedding day"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"silver puja thali set wedding gift\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "How about a beautiful silver puja thali set? It's a traditional and auspicious gift that your sister can use for years to come. These sets usually include a decorated thali, small bowls for kumkum and rice, a bell, and sometimes even a silver diya.\n\nWhat's your budget range? That will help me suggest the perfect set.",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for ₹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+} 

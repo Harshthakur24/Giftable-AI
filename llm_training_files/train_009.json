@@ -1,0 +1,63 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Need gift suggestions for an Indian wedding"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"traditional indian wedding gift set\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Indian weddings are such grand celebrations! Are you looking for a gift for the bride, groom, or the couple together? I can suggest traditional items like silver gift sets, or modern options like premium home appliances. 👰🤵",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "For the couple"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"silver plated lakshmi ganesh with gift box wedding\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some beautiful silver-plated Lakshmi Ganesh sets that make perfect wedding gifts! They come in elegant gift boxes and are considered very auspicious for newlyweds. Some sets also include matching diyas and a silver coin.\n\nWhat's your budget range? That will help me suggest more options like premium dinner sets or home decor items.",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for ₹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}

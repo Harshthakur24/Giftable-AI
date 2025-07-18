@@ -1,0 +1,63 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Need anniversary gift ideas for my wife"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"anniversary gift for wife jewelry gold\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Anniversary celebrations are so special! Would you like something traditional like gold jewelry, or maybe something more personal like a customized photo frame or spa gift set? 💕",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "Something traditional like gold jewelry"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"gold necklace set with earrings anniversary\", \"maxPrice\": 15000}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some beautiful gold jewelry sets perfect for anniversaries! There are elegant necklace and earring sets, some with traditional Indian designs and others with modern styles. Many come in beautiful gift boxes too.\n\nWhich anniversary are you celebrating? That might help me suggest something more specific - like something special for a milestone year!",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for ₹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}

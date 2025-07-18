@@ -1,0 +1,63 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Looking for Ganesh Chaturthi gifts for family"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"ganesh chaturthi puja thali gift set\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Ganesh Chaturthi is a beautiful festival of devotion! Would you like a complete puja thali set with all the essentials like modak mold, incense holder, and diya? Or perhaps an eco-friendly Ganesha idol with decorative items? 🙏",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "A complete puja set would be nice"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"ganesh chaturthi complete puja set with modak making kit\", \"maxPrice\": 2000}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some beautiful complete Ganesh Chaturthi puja sets! They include a decorated thali, modak making kit, incense holder, diya, and all the essential items for the puja. Some even come with a recipe book for making different types of modak.\n\nWould you like me to also look for some traditional dry fruits and sweets to offer as prasad?",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for ₹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}

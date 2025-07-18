@@ -1,0 +1,63 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Looking for Onam festival gifts"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"onam festival gift kasavu saree\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Onam brings such joy and prosperity! Would you like traditional Kerala gifts like a beautiful Kasavu saree, or maybe something for the home like brass lamps and banana leaf serving sets? 🌿",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "Traditional Kerala items would be great"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"kerala traditional brass lamp with coconut shell\", \"maxPrice\": 1500}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some authentic Kerala traditional items! Beautiful brass lamps (Nilavilakku), coconut shell crafts, and traditional serving sets. Some packages even include Onam special spice mixes and banana chips.\n\nAre you shopping for family members or looking to gift someone special during the Onam celebrations?",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for ₹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}

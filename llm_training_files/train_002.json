@@ -1,0 +1,82 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "I need a gift for my father-in-law for Diwali"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"premium dry fruits gift box diwali\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "For Diwali, a premium dry fruits gift box would be perfect! It's both traditional and thoughtful. Does your father-in-law prefer specific nuts or dry fruits? 😊",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "He likes cashews and almonds"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"premium cashew almond gift box diwali\", \"maxPrice\": 2000}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some beautiful gift boxes with premium cashews and almonds! They come in elegant packaging perfect for Diwali. Some even include silver-plated bowls or decorative diyas.\n\nWhat's your budget range for this gift?",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "Around ₹1500"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"dry fruit gift box with diya set\", \"maxPrice\": 1500}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Perfect! I found a lovely gift set within your budget that includes premium cashews, almonds, and a beautiful brass diya set. It comes in festive packaging too!\n\nWould you like me to also suggest some traditional Diwali sweets to go with it?",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for ₹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
+
+}

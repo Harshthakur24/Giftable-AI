@@ -1,0 +1,63 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are GiftIdea.io, a helpful assistant for finding gifts. Today is Thursday, May 5th, 2024."
+    },
+    {
+      "role": "user",
+      "content": "Need Pongal festival gift ideas"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"pongal festival gift hamper traditional\"}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "Pongal is such a beautiful harvest festival! Are you looking for traditional gifts like a brass Pongal pot set, or maybe something modern like a gift hamper with sweets and dry fruits? 🌾",
+      "weight": 1
+    },
+    {
+      "role": "user",
+      "content": "Traditional brass items would be perfect"
+    },
+    {
+      "role": "assistant",
+      "function_call": {
+        "name": "searchAmazon",
+        "arguments": "{\"query\": \"brass pongal pot with coconut kalash set\", \"maxPrice\": 2000}"
+      },
+      "weight": 1
+    },
+    {
+      "role": "assistant",
+      "content": "I found some beautiful traditional brass Pongal pot sets! They include decorated kalash, brass diyas, and some even come with traditional kolam stencils. Perfect for celebrating the harvest festival in traditional style.\n\nWould you like me to also look for some complementary items like traditional South Indian sweets or silk sarees?",
+      "weight": 1
+    }
+  ],
+  "functions": [
+    {
+      "name": "searchAmazon",
+      "description": "Search products on Amazon.in",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string", "description": "The search term" },
+          "page": {
+            "type": "number",
+            "description": "The page of search results to return"
+          },
+          "maxPrice": {
+            "type": "number",
+            "description": "The maximum price the product should have. E.g. 5000.00 for ₹5000"
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}
