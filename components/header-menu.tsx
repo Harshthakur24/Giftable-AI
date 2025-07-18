@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Menu, MessageCircleHeart, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "./ui/button";
 
 const HeaderMenu = () => {
@@ -17,7 +18,7 @@ const HeaderMenu = () => {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">GiftIdea.io</span>
-            <img className="h-8 w-auto" src="/img/logo.png" alt="" />
+            <Image className="h-8 w-auto" src="/img/logo.png" alt="GiftIdea.io Logo" width={32} height={32} />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -64,7 +65,7 @@ const HeaderMenu = () => {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">GiftIdea.io</span>
-              <img className="h-8 w-auto" src="/img/logo.png" alt="" />
+              <Image className="h-8 w-auto" src="/img/logo.png" alt="GiftIdea.io Logo" width={32} height={32} />
             </a>
             <button
               type="button"
@@ -93,7 +94,7 @@ const HeaderMenu = () => {
                   <Link
                     href="/new"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="flex gap-2 items-center w-full"
+                    className="flex gap-2 items-center"
                   >
                     Start New Chat
                     <MessageCircleHeart size={24} className="text-mint-800" />
@@ -107,4 +108,5 @@ const HeaderMenu = () => {
     </header>
   );
 };
+
 export default HeaderMenu;

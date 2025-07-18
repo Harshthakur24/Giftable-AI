@@ -7,7 +7,7 @@ import PlausibleProvider from "next-plausible";
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <PlausibleProvider
-      domain={"geschenkidee.io"}
+      domain={"Giftable AIo"}
       trackOutboundLinks
       trackLocalhost
       taggedEvents

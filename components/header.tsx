@@ -13,7 +13,7 @@ export default function Header() {
         <p className="my-12 mt-8 text-md font-normal leading-relaxed md:text-lg lg:text-xl lg:leading-relaxed">
           Skip the gift-hunting stress! Our smart AI understands Indian festivals,
           personal preferences, and budgets to suggest meaningful gifts that truly delight.
-          From Diwali hampers to birthday surprises - we've got you covered!
+          From Diwali hampers to birthday surprises - we&apos;ve got you covered!
         </p>
 
         <Button size="lg" theme="mint" asChild>

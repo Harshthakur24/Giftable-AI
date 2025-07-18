@@ -2,6 +2,7 @@
 
 import { SearchItemsResponse, SearchResultItem } from "paapi5-typescript-sdk";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Percent } from "lucide-react";
 
@@ -42,10 +43,12 @@ export function AmazonSearchResults({
               >
                 <div className="flex flex-col gap-1 h-full overflow-hidden">
                   <div className="w-full max-w-full flex flex-col border-b-2 border-black overflow-hidden rounded-none rounded-t-lg aspect-square">
-                    <img
-                      src={item.Images?.Primary?.Large?.URL}
-                      alt={item.ItemInfo?.Title?.DisplayValue}
+                    <Image
+                      src={item.Images?.Primary?.Large?.URL || '/img/logo.png'}
+                      alt={item.ItemInfo?.Title?.DisplayValue || 'Product image'}
                       className="object-cover object-center aspect-square w-full max-w-full"
+                      width={200}
+                      height={200}
                     />
                   </div>
                   <div className="flex-1 flex-grow px-2 pb-1 flex flex-col text-wrap text-sm overflow-hidden line-clamp-2">

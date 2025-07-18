@@ -2,7 +2,7 @@ import Features from "@/components/features";
 import Header from "@/components/header";
 
 export const metadata = {
-  //   title: "GeschenkIdee.io",
+  //   title: "Giftable AIo",
 };
 
 export default async function IndexPage() {

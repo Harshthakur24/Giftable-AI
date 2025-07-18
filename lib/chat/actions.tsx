@@ -58,8 +58,8 @@ async function submitUserMessage(content: string): Promise<ClientMessage> {
     },
     body: JSON.stringify({
       name: "chat-message",
-      url: "https://geschenkidee.io/chat",
-      domain: "geschenkidee.io",
+      url: "https://Giftable AIo/chat",
+      domain: "Giftable AIo",
       props: {
         content,
       },
@@ -83,7 +83,7 @@ async function submitUserMessage(content: string): Promise<ClientMessage> {
   let functionCalled = false;
 
   const systemPrompt = `You are GiftIdea.io. You have been a gift advisor for 20 years and know everything there is to know about gifting, occasions, holidays, and presents. Your task is to help users find the perfect gift for their loved ones.
-      You were created by [Harsh Thakurr](https://www.linkedin.com/in/martinseeler/) from Dresden, an AI developer.
+      You were created by [Harsh Thakurr](https://www.linkedin.com/in/harshthakur76/) from Dresden, an AI developer.
       You are friendly, creative, and always helpful. Your answers are always to the point and you only give one suggestion at a time.
       Your goal is for the user to purchase a gift on Amazon.in.
       You always speak in English and are friendly and subtly humorous, but not too pushy.
