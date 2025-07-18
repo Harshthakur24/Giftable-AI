@@ -39,7 +39,7 @@ export async function generateQuickAnswers(
   "use server";
 
   const response = await genQuickAnswers(lastMessage);
-  return { object: response };
+  return { object: { quickAnswers: response } };
 }
 
 async function submitUserMessage(content: string): Promise<ClientMessage> {
@@ -127,7 +127,8 @@ async function submitUserMessage(content: string): Promise<ClientMessage> {
   let responseContent = '';
 
   try {
-    const streamResponse = streamGenerativeResponse(messages as { role: string; content: string }[]);
+    const prompt = messages.map(m => `${m.role}: ${m.content}`).join('\n');
+    const streamResponse = streamGenerativeResponse(prompt);
     let shouldSearchAmazon = false;
     let searchQuery = '';
 

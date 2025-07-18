@@ -5,7 +5,7 @@ import { AI } from "@/lib/chat/actions";
 export const dynamic = "force-dynamic";
 
 // export const metadata = {
-//   //   title: "GeschenkIdee.io",
+//   //   title: "Giftable AIo",
 // };
 
 export default async function IndexPage() {

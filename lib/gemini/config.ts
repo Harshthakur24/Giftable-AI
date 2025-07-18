@@ -1,11 +1,19 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
+let genAI: GoogleGenerativeAI | null = null;
+let geminiModel: any = null;
 
-export const geminiModel = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+function initializeGemini() {
+  if (!genAI) {
+    genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
+    geminiModel = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+  }
+  return geminiModel;
+}
 
 export async function generateChatResponse(messages: Array<{ role: string; content: string }>) {
-  const chat = geminiModel.startChat({
+  const model = initializeGemini();
+  const chat = model.startChat({
     history: messages.map(msg => ({
       role: msg.role === 'user' ? 'user' : 'model',
       parts: [{ text: msg.content }],
@@ -24,59 +32,50 @@ export async function generateChatResponse(messages: Array<{ role: string; conte
 }
 
 export async function generateQuickAnswers(lastMessage: string) {
+  const model = initializeGemini();
   const prompt = `Based on this gift advisor message: "${lastMessage}"
 
-Generate 4 quick response suggestions that a user might want to say next. These should be natural follow-up questions or clarifications about gifts. Return ONLY a JSON array of strings.
+Generate 7 quick response suggestions that a user might want to say next. These should be natural follow-up questions or clarifications about gifts. Return ONLY a JSON array of strings.
 
-Examples of good quick responses:
+Examples:
+- "What about for someone who loves reading?"
+- "Something under ₹2000 would be perfect"
+- "Do you have traditional options?"
 - "What's the budget range?"
 - "Sports enthusiast"
 - "Tech fan" 
-- "Something traditional"
-- "Show me more options"
 - "What about for kids?"
 
-Return format: ["Option 1", "Option 2", "Option 3", "Option 4"]`;
-  
-  const result = await geminiModel.generateContent(prompt);
+
+
+Make them specific to the context of the last message.`;
+
+  const result = await model.generateContent(prompt);
   const response = await result.response;
-  const text = response.text().trim();
+  const text = response.text();
   
   try {
-    // Remove any markdown formatting if present
-    const jsonStr = text.replace(/```json\n?|\n?```/g, '').trim();
-    const answers = JSON.parse(jsonStr);
-    return { quickAnswers: Array.isArray(answers) ? answers.slice(0, 4) : [] };
-  } catch (e) {
-    console.error('Failed to parse quick answers:', e);
-    // Fallback quick answers based on context
-    const fallbackAnswers = [
-      "What's my budget?",
-      "Show me more options",
-      "Something traditional",
-      "Any other suggestions?"
+    const suggestions = JSON.parse(text);
+    return Array.isArray(suggestions) ? suggestions.slice(0, 4) : [];
+  } catch (error) {
+    console.error('Failed to parse quick answers:', error);
+    return [
+      "Tell me more about the recipient",
+      "What's your budget?", 
+      "Any specific interests?",
+      "When do you need it?"
     ];
-    return { quickAnswers: fallbackAnswers };
   }
 }
 
-export async function* streamGenerativeResponse(messages: Array<{ role: string; content: string }>) {
-  const chat = geminiModel.startChat({
-    history: messages.slice(0, -1).map(msg => ({
-      role: msg.role === 'user' ? 'user' : 'model',
-      parts: [{ text: msg.content }],
-    })),
-    generationConfig: {
-      maxOutputTokens: 2048,
-      temperature: 0.7,
-      topP: 0.8,
-      topK: 40,
-    },
-  });
-
-  const result = await chat.sendMessageStream(messages[messages.length - 1].content);
+export async function* streamGenerativeResponse(prompt: string) {
+  const model = initializeGemini();
+  const result = await model.generateContentStream(prompt);
   
   for await (const chunk of result.stream) {
-    yield chunk.text();
+    const chunkText = chunk.text();
+    if (chunkText) {
+      yield chunkText;
+    }
   }
 } 
