@@ -12,7 +12,7 @@ export function FooterText({ className, ...props }: React.ComponentProps<"p">) {
       )}
       {...props}
     >
-      An AI project by{" "}
+      An AI product by{" "}
       <ExternalLink href="https://harshthakur.xyz">Harsh Thakur</ExternalLink>.
     </p>
   );
